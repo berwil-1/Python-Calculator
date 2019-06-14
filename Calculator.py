@@ -14,7 +14,7 @@ def calc(eq):
                     mem = math.log10(float(x[lenght + 1]))
                     substr = "log " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
         
         atan = x.count("atan")
@@ -24,7 +24,7 @@ def calc(eq):
                     mem = math.atan(math.degrees(float(x[lenght + 1])))
                     substr = "atan " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
         
         acos = x.count("acos")
@@ -34,7 +34,7 @@ def calc(eq):
                     mem = math.acos(math.degrees(float(x[lenght + 1])))
                     substr = "acos " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
         
         asin = x.count("asin")
@@ -44,7 +44,7 @@ def calc(eq):
                     mem = math.asin(math.degrees(float(x[lenght + 1])))
                     substr = "asin " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
         
         tan = x.count("tan")
@@ -54,7 +54,7 @@ def calc(eq):
                     mem = math.tan(math.radians(float(x[lenght + 1])))
                     substr = "tan " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
         
         cos = x.count("cos")
@@ -64,7 +64,7 @@ def calc(eq):
                     mem = math.cos(math.radians(float(x[lenght + 1])))
                     substr = "cos " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
         
         sin = x.count("sin")
@@ -74,7 +74,7 @@ def calc(eq):
                     mem = math.sin(math.radians(float(x[lenght + 1])))
                     substr = "sin " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
         
         sqrt = x.count("//")
@@ -84,7 +84,7 @@ def calc(eq):
                     mem = math.pow(float(x[lenght - 1]), 1 / float(x[lenght + 1]))
                     substr = x[lenght - 1] + " // " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
         
         sqr = x.count("^")
@@ -94,7 +94,7 @@ def calc(eq):
                     mem = math.pow(float(x[lenght - 1]), float(x[lenght + 1]))
                     substr = x[lenght - 1] + " ^ " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
         
         div = x.count("/")
@@ -104,7 +104,7 @@ def calc(eq):
                     mem = float(x[lenght - 1]) / float(x[lenght + 1])
                     substr = x[lenght - 1] + " / " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
 
         mul = x.count("*")
@@ -114,7 +114,7 @@ def calc(eq):
                     mem = float(x[lenght - 1]) * float(x[lenght + 1])
                     substr = x[lenght - 1] + " * " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
         
         sub = x.count("-")
@@ -124,7 +124,7 @@ def calc(eq):
                     mem = float(x[lenght - 1]) - float(x[lenght + 1])
                     substr = x[lenght - 1] + " - " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
 
         add = x.count("+")
@@ -134,7 +134,7 @@ def calc(eq):
                     mem = float(x[lenght - 1]) + float(x[lenght + 1])
                     substr = x[lenght - 1] + " + " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
 
         com = x.count("==")
@@ -144,7 +144,7 @@ def calc(eq):
                     mem = (float(x[lenght - 1]) == float(x[lenght + 1]))
                     substr = x[lenght - 1] + " == " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
-            eq = res
+                    eq = res
             x = eq.split()
             
         return eq
