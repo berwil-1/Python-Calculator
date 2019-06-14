@@ -1,14 +1,14 @@
 # Python-Calculator
-###### What is it:
+## What is it:
 The Python-Calculator is a basic Python-3.6 calculator that I made as a side school project.
 
-###### How does it work:
+## How does it work:
 It takes an input of a math problem all at once and solves it by gradually making the problem easier until there's only addition and subtraction left.
 
-###### What can it do:
+## What can it do:
 It has a few mathematical and logical functions that can be listed by writing "help" during the input.
 
-###### Need to know:
+## Need to know:
 You *need* to use correct spacing for it to work. Otherwise it will either output the input or give an error.
 
 **This is correct:**
