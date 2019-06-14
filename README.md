@@ -12,16 +12,16 @@ It has a few mathematical and logical functions that can be listed by writing "h
 You *need* to use correct spacing for it to work. Otherwise it will either output the input or give an error.
 
 **This is correct:**
-> 1 + 1
-> (1 + 1)
-> 1 - 1
-> log(10)
+- 1 + 1
+- (1 + 1)
+- 1 - 1
+- log(10)
 
 **This is __not__ correct:**
-> 1+1
-> ( 1 + 1 )
-> 1-1
-> log( 10 )
+- 1+1
+- ( 1 + 1 )
+- 1-1
+- log( 10 )
 
 ###### Can I use it:
 Yes you can use this for commercial use.
