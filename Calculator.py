@@ -14,7 +14,6 @@
 # limitations under the License.
 #
 
-# -*- coding: cp1252 -*-
 import math
 import re
 
@@ -22,6 +21,16 @@ def calc(eq):
     try:
         x = eq.split()
         res = ""
+
+        deg = x.count("deg")
+        for amount in range(deg):
+            for lenght in range(len(x)):
+                if x[lenght] == "deg":
+                    mem = math.degrees(float(x[lenght + 1]))
+                    substr = "deg " + x[lenght + 1]
+                    res = eq.replace(substr, str(mem))
+                    eq = res
+            x = eq.split()
 
         log = x.count("log")
         for amount in range(log):
@@ -37,7 +46,7 @@ def calc(eq):
         for amount in range(atan):
             for lenght in range(len(x)):
                 if x[lenght] == "atan":
-                    mem = math.atan(math.degrees(float(x[lenght + 1])))
+                    mem = math.atan(float(x[lenght + 1]))
                     substr = "atan " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
@@ -47,7 +56,7 @@ def calc(eq):
         for amount in range(acos):
             for lenght in range(len(x)):
                 if x[lenght] == "acos":
-                    mem = math.acos(math.degrees(float(x[lenght + 1])))
+                    mem = math.acos(float(x[lenght + 1]))
                     substr = "acos " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
@@ -57,7 +66,7 @@ def calc(eq):
         for amount in range(asin):
             for lenght in range(len(x)):
                 if x[lenght] == "asin":
-                    mem = math.asin(math.degrees(float(x[lenght + 1])))
+                    mem = math.asin(float(x[lenght + 1]))
                     substr = "asin " + x[lenght + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
@@ -193,6 +202,7 @@ while exit == 0:
         print("acos(Num)    -   Arccosine")
         print("atan(Num)    -   Arctangent")
         print("log(Num)     -   Logarithm")
+        print("deg(Num)     -   Degrees")
         continue
         
     numin = numin.replace("sin(", "sin (")
@@ -202,6 +212,7 @@ while exit == 0:
     numin = numin.replace("acos(", "acos (")
     numin = numin.replace("atan(", "atan (")
     numin = numin.replace("log(", "log (")
+    numin = numin.replace("deg(", "deg (")
     numin = numin.replace("Pi", "3.14159265358979323846264338327950288419716939937")
 
     parenthesis = numin.count("(")
