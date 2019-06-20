@@ -1,6 +1,9 @@
 # Python-Calculator
 ## What is it:
-The Python-Calculator is a basic Python-3.6 calculator that I made as a side school project.
+The Python-Calculator is an advanced but simple made Python-3.6 calculator that I made as a side school project.
+It's written in plain Python 3.6 in under 300 lines of code.
+
+It started as a Java project but was later remade into Python to work as a school project.
 
 ## How does it work:
 It takes an input of a math problem all at once and solves it by gradually making the problem easier until there's only addition and subtraction left.
