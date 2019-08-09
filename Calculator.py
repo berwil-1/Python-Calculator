@@ -13,10 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 import math
 import re
-
 def calc(eq):
     try:
         x = eq.split()
@@ -102,8 +100,8 @@ def calc(eq):
                     eq = res
             x = eq.split()
         
-        sqrt = x.count("//")
-        for amount in range(sqrt):
+        ntr = x.count("//")
+        for amount in range(ntr):
             for length in range(len(x)):
                 if x[length] == "//":
                     mem = math.pow(float(x[length - 1]), 1 / float(x[length + 1]))
@@ -112,12 +110,12 @@ def calc(eq):
                     eq = res
             x = eq.split()
         
-        sqr = x.count("^")
-        for amount in range(sqr):
+        pwr = x.count("**")
+        for amount in range(pwr):
             for length in range(len(x)):
-                if x[length] == "^":
-                    mem = math.pow(float(x[length - 1]), float(x[length + 1]))
-                    substr = x[length - 1] + " ^ " + x[length + 1]
+                if x[length] == "**":
+                    mem = float(x[length - 1]) ** float(x[length + 1])
+                    substr = x[length - 1] + " ** " + x[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
             x = eq.split()
@@ -171,6 +169,26 @@ def calc(eq):
                     res = eq.replace(substr, str(mem))
                     eq = res
             x = eq.split()
+
+        lar = x.count(">")
+        for amount in range(lar):
+            for length in range(len(x)):
+                if x[length] == ">":
+                    mem = (float(x[length - 1]) > float(x[length + 1]))
+                    substr = x[length - 1] + " > " + x[length + 1]
+                    res = eq.replace(substr, str(mem))
+                    eq = res
+            x = eq.split()
+
+        les = x.count("<")
+        for amount in range(les):
+            for length in range(len(x)):
+                if x[length] == "<":
+                    mem = (float(x[length - 1]) < float(x[length + 1]))
+                    substr = x[length - 1] + " < " + x[length + 1]
+                    res = eq.replace(substr, str(mem))
+                    eq = res
+            x = eq.split()
             
         return eq
     except IndexError:
@@ -188,13 +206,14 @@ while exit == 0:
         exit = 1
         break;
 
-    if(str(numin).lower() == "help".lower()): 
+    if(str(numin).lower() == "help".lower()):
+        print("Mathematical: ")
         print("Num + Num2   -   Addition")
         print("Num - Num2   -   Subtraction")
         print("Num * Num2   -   Multiplication")
         print("Num / Num2   -   Division")
-        print("Num ^ Num2   -   Square")
-        print("Num // Num2  -   Square root")
+        print("Num ** Num2   -  Power")
+        print("Num // Num2  -   Nth Root")
         print("sin(Num)     -   Sine")
         print("cos(Num)     -   Cosine")
         print("tan(Num)     -   Tangent")
@@ -203,6 +222,10 @@ while exit == 0:
         print("atan(Num)    -   Arctangent")
         print("log(Num)     -   Logarithm")
         print("deg(Num)     -   Degrees")
+        print("\nLogical: ")
+        print("Num == Num2  -   Equals")
+        print("Num > Num2   -   Larger")
+        print("Num < Num2   -   Less")
         continue
         
     numin = numin.replace("sin(", "sin (")
@@ -222,7 +245,6 @@ while exit == 0:
             numin = numin.replace("(" + substr + ")", " * " + str(calc(substr)))
         else:    
             substr = numin[(numin.rfind("(") + 1):numin.find(")")]
-            numin = numin.replace("(" + substr + ")", str(calc(substr)))
-                
+            numin = numin.replace("(" + substr + ")", str(calc(substr)))         
     numin = calc(numin)
     print("Answer: " + str(numin))
