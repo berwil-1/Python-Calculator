@@ -20,6 +20,16 @@ def calc(eq):
         x = eq.split()
         res = ""
 
+        rad = x.count("rad")
+        for amount in range(rad):
+            for length in range(len(x)):
+                if x[length] == "rad":
+                    mem = math.radians(float(x[length + 1]))
+                    substr = "rad " + x[length + 1]
+                    res = eq.replace(substr, str(mem))
+                    eq = res
+            x = eq.split()
+
         deg = x.count("deg")
         for amount in range(deg):
             for length in range(len(x)):
@@ -30,6 +40,16 @@ def calc(eq):
                     eq = res
             x = eq.split()
 
+        ln = x.count("ln")
+        for amount in range(ln):
+            for length in range(len(x)):
+                if x[length] == "ln":
+                    mem = math.log(float(x[length + 1]))
+                    substr = "ln " + x[length + 1]
+                    res = eq.replace(substr, str(mem))
+                    eq = res
+            x = eq.split()
+            
         log = x.count("log")
         for amount in range(log):
             for length in range(len(x)):
@@ -204,7 +224,7 @@ while exit == 0:
 
     if(str(numin).lower() == "exit".lower()):
         exit = 1
-        break;
+        break
 
     if(str(numin).lower() == "help".lower()):
         print("Mathematical: ")
@@ -235,8 +255,11 @@ while exit == 0:
     numin = numin.replace("acos(", "acos (")
     numin = numin.replace("atan(", "atan (")
     numin = numin.replace("log(", "log (")
+    numin = numin.replace("ln(", "ln (")
     numin = numin.replace("deg(", "deg (")
+    numin = numin.replace("rad(", "rad (")
     numin = numin.replace("Pi", "3.14159265358979323846264338327950288419716939937")
+    numin = numin.replace("e", "2.71828182845904523536028747135266249775724709369995")
 
     parenthesis = numin.count("(")
     for a in range(parenthesis):
