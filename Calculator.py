@@ -131,7 +131,7 @@ def calc(eq):
                     mem = math.pow(float(eqSplit[length - 1]), 1 / float(eqSplit[length + 1]))
                     substr = eqSplit[length - 1] + " // " + eqSplit[length + 1]
                     
-                else if eqSplit[length] == "√":
+                elif eqSplit[length] == "√":
                     mem = math.pow(float(eqSplit[length - 1]), 1 / float(eqSplit[length + 1]))
                     substr = eqSplit[length - 1] + " √ " + eqSplit[length + 1]
                     
