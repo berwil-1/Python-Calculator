@@ -15,200 +15,209 @@
 #
 import math
 import re
+
+# Main calculator function
 def calc(eq):
     try:
-        x = eq.split()
+        eqSplit = eq.split()
         res = ""
 
-        rad = x.count("rad")
+        rad = eqSplit.count("rad")
         for amount in range(rad):
-            for length in range(len(x)):
-                if x[length] == "rad":
-                    mem = math.radians(float(x[length + 1]))
-                    substr = "rad " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "rad":
+                    mem = math.radians(float(eqSplit[length + 1]))
+                    substr = "rad " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
 
-        deg = x.count("deg")
+        deg = eqSplit.count("deg")
         for amount in range(deg):
-            for length in range(len(x)):
+            for length in range(len(eqSplit)):
                 if x[length] == "deg":
-                    mem = math.degrees(float(x[length + 1]))
-                    substr = "deg " + x[length + 1]
+                    mem = math.degrees(float(eqSplit[length + 1]))
+                    substr = "deg " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
 
-        ln = x.count("ln")
+        ln = eqSplit.count("ln")
         for amount in range(ln):
-            for length in range(len(x)):
-                if x[length] == "ln":
-                    mem = math.log(float(x[length + 1]))
-                    substr = "ln " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "ln":
+                    mem = math.log(float(eqSplit[length + 1]))
+                    substr = "ln " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
             
-        log = x.count("log")
+        log = eqSplit.count("log")
         for amount in range(log):
-            for length in range(len(x)):
-                if x[length] == "log":
-                    mem = math.log10(float(x[length + 1]))
-                    substr = "log " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "log":
+                    mem = math.log10(float(eqSplit[length + 1]))
+                    substr = "log " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
         
-        atan = x.count("atan")
+        atan = eqSplit.count("atan")
         for amount in range(atan):
-            for length in range(len(x)):
+            for length in range(len(eqSplit)):
                 if x[length] == "atan":
-                    mem = math.atan(float(x[length + 1]))
-                    substr = "atan " + x[length + 1]
+                    mem = math.atan(float(eqSplit[length + 1]))
+                    substr = "atan " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
         
-        acos = x.count("acos")
+        acos = eqSplit.count("acos")
         for amount in range(acos):
-            for length in range(len(x)):
-                if x[length] == "acos":
-                    mem = math.acos(float(x[length + 1]))
-                    substr = "acos " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "acos":
+                    mem = math.acos(float(eqSplit[length + 1]))
+                    substr = "acos " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
         
-        asin = x.count("asin")
+        asin = eqSplit.count("asin")
         for amount in range(asin):
-            for length in range(len(x)):
-                if x[length] == "asin":
-                    mem = math.asin(float(x[length + 1]))
-                    substr = "asin " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "asin":
+                    mem = math.asin(float(eqSplit[length + 1]))
+                    substr = "asin " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
         
-        tan = x.count("tan")
+        tan = eqSplit.count("tan")
         for amount in range(tan):
-            for length in range(len(x)):
-                if x[length] == "tan":
-                    mem = math.tan(math.radians(float(x[length + 1])))
-                    substr = "tan " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "tan":
+                    mem = math.tan(math.radians(float(eqSplit[length + 1])))
+                    substr = "tan " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
         
-        cos = x.count("cos")
+        cos = eqSplit.count("cos")
         for amount in range(cos):
-            for length in range(len(x)):
-                if x[length] == "cos":
-                    mem = math.cos(math.radians(float(x[length + 1])))
-                    substr = "cos " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "cos":
+                    mem = math.cos(math.radians(float(eqSplit[length + 1])))
+                    substr = "cos " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
         
-        sin = x.count("sin")
+        sin = eqSplit.count("sin")
         for amount in range(sin):
-            for length in range(len(x)):
-                if x[length] == "sin":
-                    mem = math.sin(math.radians(float(x[length + 1])))
-                    substr = "sin " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "sin":
+                    mem = math.sin(math.radians(float(eqSplit[length + 1])))
+                    substr = "sin " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
         
-        ntr = x.count("//")
+        ntr = eqSplit.count("//") + eqSplit.count("√")
         for amount in range(ntr):
-            for length in range(len(x)):
-                if x[length] == "//":
-                    mem = math.pow(float(x[length - 1]), 1 / float(x[length + 1]))
-                    substr = x[length - 1] + " // " + x[length + 1]
-                    res = eq.replace(substr, str(mem))
-                    eq = res
-            x = eq.split()
+            for length in range(len(eqSplit)):
+                mem = 0
+                substr = ""
+                if eqSplit[length] == "//":
+                    mem = math.pow(float(eqSplit[length - 1]), 1 / float(eqSplit[length + 1]))
+                    substr = eqSplit[length - 1] + " // " + eqSplit[length + 1]
+                    
+                else if eqSplit[length] == "√":
+                    mem = math.pow(float(eqSplit[length - 1]), 1 / float(eqSplit[length + 1]))
+                    substr = eqSplit[length - 1] + " √ " + eqSplit[length + 1]
+                    
+            res = eq.replace(substr, str(mem))
+            eq = res        
+            eqSplit = eq.split()
         
-        pwr = x.count("**")
+        pwr = eqSplit.count("**")
         for amount in range(pwr):
-            for length in range(len(x)):
-                if x[length] == "**":
-                    mem = float(x[length - 1]) ** float(x[length + 1])
-                    substr = x[length - 1] + " ** " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "**":
+                    mem = float(eqSplit[length - 1]) ** float(eqSplit[length + 1])
+                    substr = eqSplit[length - 1] + " ** " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
         
-        div = x.count("/")
+        div = eqSplit.count("/")
         for amount in range(div):
-            for length in range(len(x)):
-                if x[length] == "/":
-                    mem = float(x[length - 1]) / float(x[length + 1])
-                    substr = x[length - 1] + " / " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "/":
+                    mem = float(eqSplit[length - 1]) / float(eqSplit[length + 1])
+                    substr = eqSplit[length - 1] + " / " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
 
-        mul = x.count("*")
+        mul = eqSplit.count("*")
         for amount in range(mul):
-            for length in range(len(x)):
-                if x[length] == "*":
-                    mem = float(x[length - 1]) * float(x[length + 1])
-                    substr = x[length - 1] + " * " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "*":
+                    mem = float(eqSplit[length - 1]) * float(eqSplit[length + 1])
+                    substr = eqSplit[length - 1] + " * " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
         
-        sub = x.count("-")
+        sub = eqSplit.count("-")
         for amount in range(sub):
-            for length in range(len(x)):
-                if x[length] == "-":
-                    mem = float(x[length - 1]) - float(x[length + 1])
-                    substr = x[length - 1] + " - " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "-":
+                    mem = float(eqSplit[length - 1]) - float(eqSplit[length + 1])
+                    substr = eqSplit[length - 1] + " - " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
 
-        add = x.count("+")
+        add = eqSplit.count("+")
         for amount in range(add):
-            for length in range(len(x)):
-                if x[length] == "+":
-                    mem = float(x[length - 1]) + float(x[length + 1])
-                    substr = x[length - 1] + " + " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "+":
+                    mem = float(eqSplit[length - 1]) + float(eqSplit[length + 1])
+                    substr = eqSplit[length - 1] + " + " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
 
-        com = x.count("==")
+        com = eqSplit.count("==")
         for amount in range(com):
-            for length in range(len(x)):
-                if x[length] == "==":
-                    mem = (float(x[length - 1]) == float(x[length + 1]))
-                    substr = x[length - 1] + " == " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "==":
+                    mem = (float(eqSplit[length - 1]) == float(eqSplit[length + 1]))
+                    substr = eqSplit[length - 1] + " == " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
 
-        lar = x.count(">")
+        lar = eqSplit.count(">")
         for amount in range(lar):
-            for length in range(len(x)):
-                if x[length] == ">":
-                    mem = (float(x[length - 1]) > float(x[length + 1]))
-                    substr = x[length - 1] + " > " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == ">":
+                    mem = (float(eqSplit[length - 1]) > float(eqSplit[length + 1]))
+                    substr = eqSplit[length - 1] + " > " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
 
-        les = x.count("<")
+        les = eqSplit.count("<")
         for amount in range(les):
-            for length in range(len(x)):
-                if x[length] == "<":
-                    mem = (float(x[length - 1]) < float(x[length + 1]))
-                    substr = x[length - 1] + " < " + x[length + 1]
+            for length in range(len(eqSplit)):
+                if eqSplit[length] == "<":
+                    mem = (float(eqSplit[length - 1]) < float(eqSplit[length + 1]))
+                    substr = eqSplit[length - 1] + " < " + eqSplit[length + 1]
                     res = eq.replace(substr, str(mem))
                     eq = res
-            x = eq.split()
+            eqSplit = eq.split()
             
         return eq
     except IndexError:
@@ -216,16 +225,17 @@ def calc(eq):
     except ValueError:
         print("Error: Incorrect numbers.")
 
-exit = 0
-while exit == 0:
+run = 1
+while run == 1:
     numin = input("> ")
     raw = ""
     subStr = ""
 
     if(str(numin).lower() == "exit".lower()):
-        exit = 1
+        run = 0
         break
 
+    # Show calculator help
     if(str(numin).lower() == "help".lower()):
         print("Mathematical: ")
         print("Num + Num2   -   Addition")
@@ -247,7 +257,8 @@ while exit == 0:
         print("Num > Num2   -   Larger")
         print("Num < Num2   -   Less")
         continue
-        
+
+    # Reformat input    
     numin = numin.replace("sin(", "sin (")
     numin = numin.replace("cos(", "cos (")
     numin = numin.replace("tan(", "tan (")
@@ -261,13 +272,14 @@ while exit == 0:
     numin = numin.replace("Pi", "3.14159265358979323846264338327950288419716939937")
     numin = numin.replace("e", "2.71828182845904523536028747135266249775724709369995")
 
+    # Calculate parenthesises
     parenthesis = numin.count("(")
     for a in range(parenthesis):
         if not ((numin.rfind("(") - 1) < 0) and str(numin[numin.rfind("(") - 1]).isdigit():
-            substr = numin[(numin.rfind("(") + 1):numin.find(")")]
+            substr = numin[(numin.rfind("(") + 1):numin.find(")", numin.rfind("(") - 1)]
             numin = numin.replace("(" + substr + ")", " * " + str(calc(substr)))
         else:    
-            substr = numin[(numin.rfind("(") + 1):numin.find(")")]
+            substr = numin[(numin.rfind("(") + 1):numin.find(")", numin.rfind("("))]
             numin = numin.replace("(" + substr + ")", str(calc(substr)))         
     numin = calc(numin)
     print("Answer: " + str(numin))
