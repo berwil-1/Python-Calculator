@@ -23,6 +23,7 @@ a * b : Multiplication
 a / b : Division
 a ^ n : Power of N
 a \ n : Root of N
+a % b : Modulus
 
 **Functions**
 abs(a) : Absolute value, returns value as non-negative
