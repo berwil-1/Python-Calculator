@@ -11,38 +11,36 @@ Doing this iteratively will slowly make the problem easier until the problem exi
 
 ## What can it do 👀
 **Logic operators (1: true 0: false)**
-a = b : Equal
-a ! b : Not equal
-a < b : Lower
-a > b : Larger
+- a = b : Equal
+- a ! b : Not equal
+- a < b : Lower
+- a > b : Larger
 
 **Basic operators**
-a + b : Addition
-a - b : Subtraction
-a * b : Multiplication
-a / b : Division
-a ^ n : Power of N
-a \ n : Root of N
-a % b : Modulus
+- a + b : Addition
+- a - b : Subtraction
+- a * b : Multiplication
+- a / b : Division
+- a ^ n : Power of N
+- a \ n : Root of N
+- a % b : Modulus
 
 **Functions**
-abs(a) : Absolute value, returns value as non-negative
-floor(a) : Round number down
-ceil(a) : Round number up
-round(a) : Round number up/down
-
-log(a) : Common logarithm in base 10
-ln(a) : Natural logarithm in base e
-exp(n) : Function for e to the power of n
-
-rad(θ) : Angle in degrees to radians
-deg(θ) : Angle in radians to degrees
-sin(θ) : The sine of angle theta
-cos(θ) : The cosine of angle theta
-tan(θ) : The tangent of angle theta
-asin(θ) : Inverse sine of angle theta
-acos(θ) : Inverse cosine of angle theta
-atan(θ) : Inverse tangent of angle theta
+- abs(a) : Absolute value, returns value as non-negative
+- floor(a) : Round number down
+- ceil(a) : Round number up
+- round(a) : Round number up/down
+- log(a) : Common logarithm in base 10
+- ln(a) : Natural logarithm in base e
+- exp(n) : Function for e to the power of n
+- rad(θ) : Angle in degrees to radians
+- deg(θ) : Angle in radians to degrees
+- sin(θ) : The sine of angle theta
+- cos(θ) : The cosine of angle theta
+- tan(θ) : The tangent of angle theta
+- asin(θ) : Inverse sine of angle theta
+- acos(θ) : Inverse cosine of angle theta
+- atan(θ) : Inverse tangent of angle theta
 
 ## Can I use it for my own project?
 Yes you can use this for commercial use since this is licensed with [Apache License 2.0](https://tldrlegal.com/license/apache-license-2.0-(apache-2.0)).
