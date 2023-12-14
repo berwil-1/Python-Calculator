@@ -1,6 +1,6 @@
 # Python calculator
 ## What is this?
-This is a tiny calculator that can parse a long math input written in 100 lines of code. Made to be small, simple and effective.
+This is a tiny calculator that can parse a long math input written in under 100 lines of code. Made to be small, simple and effective.
 It started as a discussion between me and a friend that turned into a small Java project but was later remade into Python to work for a school project in 2019.
 In 2022 I decided to rework the poorly written code for a smaller and more clean look with better flexibility.
 It still does not have much in terms of functionality but works as a basic calculator should, with features listed below.
