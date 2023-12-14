@@ -60,7 +60,7 @@ symbols = {
 def format(text):
     return regex.findall(
         # Locate a number or
-        "([-]?[0-9]*[.]?[0-9]+|" +
+        "((?<![0-9])[-]?[0-9]*[.]?[0-9]+|" +
 
         # a symbol or,
         "[><!=+\-*/^\\\\%]|" +
